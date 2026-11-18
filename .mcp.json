@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "archbeagle": {
+      "type": "http",
+      "url": "https://app.archbeagle.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${ARCH_MCP_TOKEN}"
+      }
+    }
+  }
+}

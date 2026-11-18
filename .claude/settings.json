@@ -1,0 +1,31 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit|Read|Grep|Bash|mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/arch_hook.py\" --client claude --url https://app.archbeagle.com/mcp",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/arch_hook.py\" --client claude --event session_start --url https://app.archbeagle.com/mcp",
+            "timeout": 3
+          }
+        ]
+      }
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "archbeagle"
+  ]
+}
